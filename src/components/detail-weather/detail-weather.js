@@ -3,8 +3,8 @@ const DetailWeather = () => {
   return (
     <div className="container-detail">
       <div className="days">
-        <h3>Today</h3>
-        <h3>Tomorrow</h3>
+        <p className='idk'>Today</p>
+        <p className='idk'>Tomorrow</p>
       </div>
 
       <div className="details">

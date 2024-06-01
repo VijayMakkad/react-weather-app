@@ -34,8 +34,8 @@
   color: #f3f3f3;
 }
 
-.days h3 {
-  margin: 20px; /* Remove default margin */
-  font-size: 30px;
+.idk{
+    margin: 20px; /* Remove default margin */
+    font-size: 30px;
+    font-weight: 400px;
 }
-
