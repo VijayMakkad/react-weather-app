@@ -1,0 +1,41 @@
+.container-detail {
+  max-height: 600px;
+  overflow: auto; /* Ensures that content exceeding max-height will be scrollable */
+  margin-bottom: 40px; /* Adjust this based on your layout needs */
+  display: flex;
+  flex-direction: column;
+   float: right;
+  width: 70%;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap if they exceed container width */
+  gap: 10px; /* Adds spacing between items */
+  /* Ensures it takes the full width of the container */
+}
+
+.detail {
+  width: 200px;
+  height: 150px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2); 
+  border-radius: 10px; 
+  backdrop-filter: blur(14px); 
+  background-color: rgba(255, 255, 255, 0.2); 
+  margin: 30px;
+  padding: 5px 20px 20px 20px;
+  flex: 0 1 auto; /* Allows items to grow and shrink as needed */
+  font-size: 20px;
+  color: #f3f3f3;
+}
+.days {
+  display: flex;
+  gap: 20px; /* Adjust the gap as needed */
+  color: #f3f3f3;
+}
+
+.days h3 {
+  margin: 20px; /* Remove default margin */
+  font-size: 30px;
+}
+

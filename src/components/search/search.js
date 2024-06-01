@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { AsyncPaginate } from 'react-select-async-paginate'
 import { geoApiOptions, GEO_API_URL } from '../../api'
 import './search.css'
+import CurrentWeather from '../current-weather/current-weather'
+
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null)
@@ -57,6 +59,7 @@ const Search = ({ onSearchChange }) => {
             loadOptions={loadOptions}
             styles={customStyles}
           />
+          <CurrentWeather/>
         </div>
     </div>
   )

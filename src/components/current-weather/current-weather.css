@@ -1,0 +1,26 @@
+.weather{
+margin: 0px auto;
+padding: 0px auto;
+}
+
+hr{
+    width: 60%;
+    height: 2px;
+    background: black;
+    margin: 20px auto;
+}
+.time{
+    margin: 40px;
+    padding: 0px auto;
+}
+.temperature{
+    font-size: 50px;
+    font-weight: 500px;
+}
+.weather-desc{
+    margin-top: 0px;
+}
+.city{
+    font-size: 30px;
+    font-weight: 500px;
+}
