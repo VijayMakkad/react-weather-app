@@ -3,6 +3,7 @@ import Search from './components/search/search';
 import DetailWeather from './components/detail-weather/detail-weather';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import { useState } from 'react';
+import Tabs  from './components/tabs/tabs';
 function App() {
 
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -43,7 +44,8 @@ function App() {
           onSearchChange={handleOnSearchChange}
           weatherData={currentWeather}
         />
-        <DetailWeather weatherData={currentWeather} />
+        <Tabs weatherData={currentWeather}/>
+        {/* <DetailWeather weatherData={currentWeather} /> */}
       </div>
     </div>
   )

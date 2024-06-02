@@ -1,0 +1,23 @@
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px; /* Adjust this to control spacing from the top */
+}
+
+.custom-tab {
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 20px; /* Adjust the spacing as needed */
+  width: 100%; /* Adjust the width as needed */
+  text-align: center; /* Center align the text */
+}
+
+.tab-text {
+  font-family: 'Poppins', sans-serif;
+  color: #f3f3f3; /* Adjust the text color as needed */
+}

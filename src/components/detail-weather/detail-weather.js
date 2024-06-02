@@ -12,11 +12,6 @@ const DetailWeather = ({ weatherData }) => {
 
   return (
     <div className="container-detail">
-      <div className="days">
-        <p className="idk">Today</p>
-        <p className="idk">Tomorrow</p>
-      </div>
-
       <div className="details">
         <div className="detail">
           <p>Wind</p>
