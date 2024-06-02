@@ -33,7 +33,7 @@ const CurrentWeather = ({ weatherData }) => {
         />
         <div>
           <span className="temperature">
-            {(weatherData.main.temp - 273.15).toFixed(2)}°C
+            {Math.round(weatherData.main.temp - 273.15)}°C
           </span>
           <p className="weather-desc">{weatherData.weather[0].description}</p>
           <hr />

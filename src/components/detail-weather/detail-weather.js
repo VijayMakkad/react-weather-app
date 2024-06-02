@@ -20,7 +20,7 @@ const DetailWeather = ({ weatherData }) => {
       <div className="details">
         <div className="detail">
           <p>Wind</p>
-          <p>{weatherData.wind.speed} km/h</p>
+          <p>{Math.round(weatherData.wind.speed)*(18/5)} km/h</p>
         </div>
         <div className="detail">
           <p>Humidity</p>
@@ -45,12 +45,13 @@ const DetailWeather = ({ weatherData }) => {
         </div>
         <div className="detail">
           <p>
-            Feels Like <br /> {(weatherData.main.feels_like - 273.15).toFixed(2)}°C
+            Feels Like <br /><br /> {Math.round(weatherData.main.feels_like - 273.15)}
+            °C
           </p>
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default DetailWeather;
