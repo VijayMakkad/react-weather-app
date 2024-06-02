@@ -5,8 +5,9 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import './tabs.css'
 import DetailWeather from '../detail-weather/detail-weather'
+import Forecast from '../forecast/forecast'
 
-export default function ColorTabs({ weatherData}) {
+export default function ColorTabs({ weatherData,forecast}) {
   const [value, setValue] = React.useState('one')
 
   const handleChange = (event, newValue) => {
@@ -30,7 +31,7 @@ export default function ColorTabs({ weatherData}) {
         />
         <Tab
           value="two"
-          label="Tomorrow"
+          label="5-Day Forecast"
           sx={{ fontSize: '30px', color: 'white', fontFamily: 'Poppins' }}
           className="custom-tab"
         />
@@ -47,7 +48,7 @@ export default function ColorTabs({ weatherData}) {
         {value === 'two' && (
           <Box>
             <Typography className="tab-text" sx={{ fontFamily: 'Poppins' }}>
-              Content for Tomorrow
+              <Forecast forecast={forecast}/>
             </Typography>
             {/* Add more details specific to "Tomorrow" here */}
           </Box>
