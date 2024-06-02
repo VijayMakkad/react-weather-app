@@ -1,41 +1,56 @@
-import '../detail-weather/detail-weather.css'
-const DetailWeather = () => {
+import '../detail-weather/detail-weather.css';
+
+const DetailWeather = ({ weatherData }) => {
+  if (!weatherData) {
+    return <div className='load'></div>; // Handle the case when weatherData is null
+  }
+
+  const getFormattedTime = (timestamp) => {
+    const date = new Date(timestamp * 1000);
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
+
   return (
     <div className="container-detail">
       <div className="days">
-        <p className='idk'>Today</p>
-        <p className='idk'>Tomorrow</p>
+        <p className="idk">Today</p>
+        <p className="idk">Tomorrow</p>
       </div>
 
       <div className="details">
         <div className="detail">
           <p>Wind</p>
-          <p>10 km/h</p>
+          <p>{weatherData.wind.speed} km/h</p>
         </div>
         <div className="detail">
           <p>Humidity</p>
-          <p>50%</p>
+          <p>{weatherData.main.humidity}%</p>
         </div>
         <div className="detail">
           <p>Pressure</p>
-          <p>1000 hPa</p>
+          <p>{weatherData.main.pressure} hPa</p>
         </div>
         <div className="detail">
           <p>Visibility</p>
-          <p>10 km</p>
+          {weatherData.visibility !== undefined ? (
+            <p>{(weatherData.visibility / 1000).toFixed(1)} km</p>
+          ) : (
+            <p>N/A</p>
+          )}
         </div>
         <div className="detail">
           <p>Sun</p>
-          <p>rise: 06:00</p>
-          <p>set: 18:00</p>
+          <p>rise: {getFormattedTime(weatherData.sys.sunrise)}</p>
+          <p>set: {getFormattedTime(weatherData.sys.sunset)}</p>
         </div>
         <div className="detail">
           <p>
-            Feels Like <br /> 30°C
+            Feels Like <br /> {(weatherData.main.feels_like - 273.15).toFixed(2)}°C
           </p>
         </div>
       </div>
     </div>
-  )
-}
-export default DetailWeather
+  );
+};
+
+export default DetailWeather;

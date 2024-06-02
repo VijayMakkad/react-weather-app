@@ -5,7 +5,7 @@ import './search.css'
 import CurrentWeather from '../current-weather/current-weather'
 
 
-const Search = ({ onSearchChange }) => {
+const Search = ({ onSearchChange, weatherData }) => {
   const [search, setSearch] = useState(null)
 
   const loadOptions = async (inputValue) => {
@@ -32,35 +32,35 @@ const Search = ({ onSearchChange }) => {
   }
 
   const customStyles = {
-        control: (provided, state) => ({
-            ...provided,
-            borderRadius: '15px',
-            width:'80%',
-            margin: '20px auto',
-            border: '2px solid #ccc',
-            boxShadow: state.isFocused ? '0 0 0 2px #3699FF' : null,
-        }),
-        option: (provided, state) => ({
-            ...provided,
-            width:'80%',
-            backgroundColor: state.isFocused ? '#3699FF' : null,
-            color: state.isFocused ? 'white' : null,
-        }),
-    }
+    control: (provided, state) => ({
+      ...provided,
+      borderRadius: '15px',
+      width: '80%',
+      margin: '20px auto',
+      border: '2px solid #ccc',
+      boxShadow: state.isFocused ? '0 0 0 2px #3699FF' : null,
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      width: '80%',
+      backgroundColor: state.isFocused ? '#3699FF' : null,
+      color: state.isFocused ? 'white' : null,
+    }),
+  }
 
   return (
     <div className="container-search">
-        <div className="search">
-          <AsyncPaginate
-            placeholder="Search for a City"
-            debounceTimeout={600}
-            value={search}
-            onChange={handleOnChange}
-            loadOptions={loadOptions}
-            styles={customStyles}
-          />
-          <CurrentWeather/>
-        </div>
+      <div className="search">
+        <AsyncPaginate
+          placeholder="Search for a City"
+          debounceTimeout={600}
+          value={search}
+          onChange={handleOnChange}
+          loadOptions={loadOptions}
+          styles={customStyles}
+        />
+        <CurrentWeather weatherData={weatherData} />
+      </div>
     </div>
   )
 }

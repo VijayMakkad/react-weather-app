@@ -24,3 +24,10 @@ hr{
     font-size: 30px;
     font-weight: 500px;
 }
+.load{
+  font-size: 30px;
+    display: flex;
+    height: 500px;
+  justify-content: center;
+  align-items: center;
+}
